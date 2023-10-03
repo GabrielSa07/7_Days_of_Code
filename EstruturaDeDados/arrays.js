@@ -15,8 +15,11 @@ function addItem () {
 
 function removeItem () {
     let name = prompt('Digite o nome do produto que deseja adicionar:')
-   
-    
+
+    const index = list.findIndex(itens => itens.name === name)
+    list.splice(index, 1)
+
+    console.log(`O item ${name} foi removido da lista`)
 }
 
 function listItens () {
@@ -49,5 +52,4 @@ do {
             console.log('Opção incorreta, selecione outra.')
         break
     }
-    
 } while (option != 4);
